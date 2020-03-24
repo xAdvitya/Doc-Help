@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title>
+    <title>login</title>
 </head>
 <body>
     <form  method="post">
         {% csrf_token %}
-        <input type="text" name="firstname" placeholder="firstname"><br>
         <input type="text" name="username" placeholder="username"><br>
         <input type="password" name="pass" placeholder="password"><br>
-        <input type="password" name="confpass" placeholder="confirm password"><br>
         <input type="submit">
     </form>
     <div class="messages">
