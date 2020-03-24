@@ -29,12 +29,11 @@ def logout(request):
 def register(request):
 
     if(request.method == 'POST'):
+
         first_name = request.POST['firstname']
         username = request.POST['username']
         password = request.POST['pass']
         conf_password = request.POST['confpass']
-
-
 
         if password == conf_password:
             if User.objects.filter(username=username).exists():
@@ -43,12 +42,13 @@ def register(request):
             else:
                 user = User.objects.create_user(username=username,password=password,first_name=first_name)
                 user.save()
-                return redirect("/")
+                return redirect("login")
         else:
             messages.info(request,'password not matching')
             return redirect("register")
 
     else:
-        return redirect("login")
+        return render(request,"register/register.html")
+        
 
 
