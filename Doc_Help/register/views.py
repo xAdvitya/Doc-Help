@@ -13,13 +13,18 @@ def login(request):
 
         if user is not None:
             auth.login(request,user)
-            return redirect('/')
+            return redirect('patients')
         else:
             messages.info(request,'wrong username or password')
             return redirect('login')
 
     else:
         return render(request,"register/login.html")
+
+def logout(request):
+
+    auth.logout(request)
+    return redirect('login')
 
 def register(request):
 
@@ -44,8 +49,6 @@ def register(request):
             return redirect("register")
 
     else:
-        return render(request,"register/register.html")
+        return redirect("login")
 
 
-def home(request):
-    return render(request,"register/home.html")
