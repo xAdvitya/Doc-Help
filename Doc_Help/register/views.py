@@ -17,7 +17,6 @@ def login(request):
         else:
             messages.info(request,'wrong username or password')
             return redirect('login')
-
     else:
         return render(request,"register/login.html")
 
