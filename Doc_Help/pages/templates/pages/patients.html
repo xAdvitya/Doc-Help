@@ -4,26 +4,46 @@
 
     <title>patients</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'pages/patients.css' %}" type="text/css">
-</head>
-<body>
-    <header>
-<nav>
-    <ul>
-    <li>Dr {{user.get_username }}</li>
-    <li><a href="/register/logout">logout</a></li>
-   </ul>
-</nav>
-<hr>
-    </header>
-<h3>patients</h3>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
 
+</head>
+<style>
+.btn{
+    float: right;
+    display: fixed;
+}
+p{
+    font-size: 40px;
+}
+</style>
+<body>
+
+{% include 'pages/nav.html' %}
+
+
+<div class="container">
+
+    <p>patients
+    <a class="btn btn-primary btn-lg" role ="button" href="/patientadd">Add Patients</a> 
+</p>
+<div class="list-group">
+    <br>
+    <br>
 {% for i in names %}
 
-<li>{{i}}</li>
-<br>
+<a href="#" class="list-group-item" >{{i}}</a>
+
 {% endfor %}
+</div>
 
 
+
+
+
+</div>
 </body>
 </html>

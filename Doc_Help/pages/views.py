@@ -16,7 +16,7 @@ def patients(request):
 
     return render(request,"pages/patients.html",context={'names':names})
 
-def patientDetail(request):
+def patientAdd(request):
 
     form = PatientForm(request.POST or None,request.FILES or None)
     
@@ -30,4 +30,4 @@ def patientDetail(request):
 
     context = {'form':form}
     
-    return render(request,"pages/patientdet.html",context)
+    return render(request,"pages/patientadd.html",context)

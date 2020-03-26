@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+.btn{
+    margin-top: 20px;
+    float: right;
+}
+.list-group-item{
+    font-family: "Times";
+    font-size: 18px;
+}
+label, input {
+    display: block;
+}
+label{
+ margin-bottom: 10px; 
+}
+.box{
+    height: 10px;
+    width: 10px;
+}
+textarea{
+    width: 500px;
+    resize: none;
+    height: 100px;
+    margin-top: 10px;
+}
+.det{
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+}
+</style>
+</head>
+<body>
+    {% include 'pages/nav.html' %}
+    <div class="container">
+    <form method="POST"> 
+        {% csrf_token %}
+         <label class="list-group-item">First name {{form.first_name}}  </label> 
+         <label class="list-group-item"> Last name {{form.last_name}}  </label>  
+         <label class="list-group-item">Age        {{form.age}}  </label> 
+         <label class="list-group-item"> number of visits {{form.numvisit}}  </label> 
+         <label class="list-group-item"><span class="det">details</span> {{form.detail}}  </label> 
+
+      <input class="btn btn-primary btn-lg " type="submit" value="save"/>
+        
+        </form>
+    </div>   
+</body>
+</html>
