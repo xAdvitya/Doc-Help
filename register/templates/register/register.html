@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <link rel="shortcut icon" href="{%  static 'pages/favicon-32x32.png' %}"> 
+
+    <title>Register</title>
+    <style>
+        .btn{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    {% include 'pages/nav.html' %}
+
+    <div class="container">
+    <div class="jumbotron">
+        <h1>Welcome!! &nbsp; please Register</h1>
+    </div>
+
+  
+    <form  class="form-group" method="post">
+        {% csrf_token %}
+        <label >Name</label>
+        <input class="form-control" type="text" name="firstname" placeholder="firstname" required><br>
+        <label >Username</label>
+        <input class="form-control" type="text" name="username" placeholder="username" required><br>
+        <label >Password</label>
+        <input class="form-control" type="password" name="pass" placeholder="password" required><br>
+        <label >Confirm password</label>
+        <input  class="form-control" type="password" name="confpass" placeholder="confirm password" required><br>
+        <input class="btn btn-primary btn-sm"  type="submit">
+    </form>
+
+    <div class="messages">
+
+        {% for message in messages%}
+        <i>{{message}}</i>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
