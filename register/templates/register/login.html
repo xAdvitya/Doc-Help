@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,4 +48,55 @@
     </div>
 </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <link rel="shortcut icon" href="{%  static 'pages/favicon-32x32.png' %}"> 
+
+    <title>login</title>
+
+    <style>
+.btn{
+    float: right;
+}
+
+.messages{
+    font-family: Arial, Helvetica, sans-serif;
+    color: tomato;
+}
+    </style>
+</head>
+
+<body>
+    {% include 'pages/nav.html' %}
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>Welcome!! &nbsp; please Login</h1>
+        </div>
+
+        <div class="jumbotron">
+    <form  method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username" required /><br><br>
+        <input type="password" name="pass" placeholder="password" required /><br>
+        <input class="btn btn-primary btn-lg" type="submit" value="Login" required/>
+    </form>
+    <div class="messages">
+
+        {% for message in messages%}
+        <i>{{message}}</i>
+        {% endfor %}
+    </div>
+    </div>
+</div>
+</body>
+>>>>>>> 65ac7b5834b1d58425ec286c723914a690ca97d9
 </html>
