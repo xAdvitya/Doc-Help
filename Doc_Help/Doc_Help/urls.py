@@ -16,13 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from register.views import register,login,logout
-from pages.views import home,patients,patientAdd
+from pages.views import home,patients,patientAdd,removeObj
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',register,name="register"),
     path('patients/',patients,name="patients"),
     path('patientadd/',patientAdd,name="patientadd"),
     path('login/',login,name="login"),
+    #path('remove/<int:pk>/',removeObj,name='remove'),
+    path("remove/<int:pk>/",removeObj,name="remove"),
+    #path(r"remove/<int:pk>/",removeObj,name="remove"),
     path('register/logout/',logout,name="logout"),
     path('',home),
 ]

@@ -1,49 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
 
-    <title>patients</title>
-    {% load static %}
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+        <title>patients</title>
+        {% load static %}
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+        <link rel="shortcut icon" href="{%  static 'pages/favicon-32x32.png' %}"> 
+        
 
-</head>
+    </head>
 <style>
+
 .btn{
     float: right;
     display: fixed;
 }
+
 p{
     font-size: 40px;
 }
 </style>
-<body>
+    <body>
 
-{% include 'pages/nav.html' %}
-
-
-<div class="container">
-
-    <p>patients
-    <a class="btn btn-primary btn-lg" role ="button" href="/patientadd">Add Patients</a> 
-</p>
-<div class="list-group">
-    <br>
-    <br>
-{% for i in names %}
-
-<a href="#" class="list-group-item" >{{i}}</a>
-
-{% endfor %}
-</div>
+    {% include 'pages/nav.html' %}
 
 
+    <div class="container">
 
+        <p>patients
+        <a class="btn btn-primary btn-lg" role ="button" href="/patientadd">Add Patients</a> 
+    </p>
+    <div class="list-group">
+        <br>
+        <br>
+    {% for i in names %}
 
+    <a href="{% url 'remove' pk=i.pk %}" class="list-group-item">{{i}}</a>
 
+    {% endfor %}
+    </div>
 </div>
 </body>
 </html>

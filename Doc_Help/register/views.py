@@ -4,22 +4,25 @@ from django.contrib.auth.models import User,auth
 
 def login(request):
     
-    
-    if(request.method == 'POST'):
+    if (not request.user.is_authenticated):
 
-        username = request.POST['username']
-        password = request.POST['pass']
+        if(request.method == 'POST'):
 
-        user = auth.authenticate(username=username,password=password)
+            username = request.POST['username']
+            password = request.POST['pass']
 
-        if user is not None:
-            auth.login(request,user)
-            return redirect('patients')
+            user = auth.authenticate(username=username,password=password)
+
+            if user is not None:
+                auth.login(request,user)
+                return redirect('patients')
+            else:
+                messages.info(request,'wrong username or password')
+                return redirect('login')
         else:
-            messages.info(request,'wrong username or password')
-            return redirect('login')
+            return render(request,"register/login.html")
     else:
-        return render(request,"register/login.html")
+        return redirect("/")
 
 def logout(request):
 
