@@ -23,9 +23,7 @@ urlpatterns = [
     path('patients/',patients,name="patients"),
     path('patientadd/',patientAdd,name="patientadd"),
     path('login/',login,name="login"),
-    #path('remove/<int:pk>/',removeObj,name='remove'),
     path("remove/<int:pk>/",removeObj,name="remove"),
-    #path(r"remove/<int:pk>/",removeObj,name="remove"),
     path('register/logout/',logout,name="logout"),
     path('',home),
 ]

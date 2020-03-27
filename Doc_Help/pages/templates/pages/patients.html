@@ -15,13 +15,17 @@
     </head>
 <style>
 
-.btn{
+.add{
     float: right;
     display: fixed;
 }
 
 p{
     font-size: 40px;
+}
+.btn-danger{
+    float: right;
+    margin-top: -5px;
 }
 </style>
     <body>
@@ -31,15 +35,15 @@ p{
 
     <div class="container">
 
-        <p>patients
-        <a class="btn btn-primary btn-lg" role ="button" href="/patientadd">Add Patients</a> 
+        <p>Patient List
+        <a class="btn btn-primary btn-lg add" role ="button" href="/patientadd">Add Patients</a> 
     </p>
     <div class="list-group">
         <br>
         <br>
     {% for i in names %}
 
-    <a href="{% url 'remove' pk=i.pk %}" class="list-group-item">{{i}}</a>
+    <li  class="list-group-item" >{{i.first_name}}  {{i.last_name}} <a class="btn btn-danger btn-sm" href="{% url 'remove' pk=i.pk %}"> Delete</a> </li>
 
     {% endfor %}
     </div>

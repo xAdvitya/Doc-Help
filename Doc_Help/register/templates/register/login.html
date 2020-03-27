@@ -34,9 +34,9 @@
         <div class="jumbotron">
     <form  method="post">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="username"><br><br>
-        <input type="password" name="pass" placeholder="password"><br>
-        <input class="btn btn-primary btn-lg " type="submit" value="Login"/>
+        <input type="text" name="username" placeholder="username" required /><br><br>
+        <input type="password" name="pass" placeholder="password" required /><br>
+        <input class="btn btn-primary btn-lg" type="submit" value="Login" required/>
     </form>
     <div class="messages">
 
