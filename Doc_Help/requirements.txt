@@ -35,6 +35,7 @@ google-auth-oauthlib==0.4.1
 google-pasta==0.1.8
 googleapis-common-protos==1.51.0
 grpcio==1.26.0
+psycopg2-binary==2.7.7
 gunicorn==20.0.4
 h5py==2.10.0
 idna==2.8
@@ -146,4 +147,3 @@ win-inet-pton==1.1.0
 wincertstore==0.2
 wrapt==1.11.2
 zipp==0.6.0
-psycopg2==2.7.2
