@@ -77,7 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Doc_Help.wsgi.application'
 
 
-# Database
+# Databas
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 import psycopg2
