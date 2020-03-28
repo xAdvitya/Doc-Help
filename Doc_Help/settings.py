@@ -89,9 +89,9 @@ WSGI_APPLICATION = 'Doc_Help.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Doc_Help',
-        'USER': 'advitya',
-        'PASSWORD':'',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD':'advitya',
         'HOST': 'localhost',
         'PORT': '',
     }
