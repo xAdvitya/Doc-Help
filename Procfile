@@ -1,1 +1,1 @@
-web: gunicorn Doc_Help.wsgi --log-file -
+web: gunicorn Doc_Help.wsgi --log-file - --log-level debug
