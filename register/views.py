@@ -42,26 +42,25 @@ def register(request):
         if username != '':
             print(username)
 
-            if (len(password) < 8):
+            if (len(password) >= 8):
                
                 if User.objects.filter(username=username).exists():
-                    messages.info(request,"Enter 8 digit password")
-                    return redirect("register")
+                    messages.info(request,"username taken")
+                    return render(request,"register/register.html")
                 else:
-                    user = User.objects.create_user(username=username,password=password,first_name=first_name)
-                    user.save()
-                    return redirect("login")
-                    
-            elif(password == conf_password):
 
-                return redirect("login")
+                    if(password != conf_password):
+                        messages.info(request,'password not matching')
+                        return render(request,"register/register.html")
 
+
+                    else:
+                        user = User.objects.create_user(username=username,password=password,first_name=first_name)
+                        user.save()
+                        return redirect('login')
             else:
-                messages.info(request,'password not matching')
-                return redirect("register")
-            
-        else:
-            return render(request,"register/register.html")
+                messages.info(request,"enter 8 digit password")
+                return render(request,"register/register.html")
 
     else:
         return render(request,"register/register.html")
