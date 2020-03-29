@@ -42,10 +42,10 @@ def register(request):
         if username != '':
             print(username)
 
-            if (not len(password) < 8):
+            if (len(password) < 8):
                
                 if User.objects.filter(username=username).exists():
-                    messages.info(request,"Enter * digit password")
+                    messages.info(request,"Enter 8 digit password")
                     return redirect("register")
                 else:
                     user = User.objects.create_user(username=username,password=password,first_name=first_name)
@@ -53,7 +53,7 @@ def register(request):
                     return redirect("login")
                     
             elif(password == conf_password):
-                
+
                 return redirect("login")
 
             else:
