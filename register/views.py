@@ -38,14 +38,14 @@ def register(request):
         password = request.POST['pass']
         conf_password = request.POST['confpass']
 
-        print("//////////////////////")
+
         if username != '':
             print(username)
 
             if (not len(password) < 8):
                
                 if User.objects.filter(username=username).exists():
-                    messages.info(request,"username taken")
+                    messages.info(request,"Enter * digit password")
                     return redirect("register")
                 else:
                     user = User.objects.create_user(username=username,password=password,first_name=first_name)
@@ -53,8 +53,8 @@ def register(request):
                     return redirect("login")
                     
             elif(password == conf_password):
-                messages.info(request,'password not matching')
-                return redirect("register")
+                
+                return redirect("login")
 
             else:
                 messages.info(request,'password not matching')
