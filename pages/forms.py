@@ -6,3 +6,4 @@ class PatientForm(forms.ModelForm):
     class Meta:
         model = Patient
         fields = ['first_name','last_name','age','numvisit','detail']
+        #making the form 
