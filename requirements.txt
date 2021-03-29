@@ -88,7 +88,7 @@ pyasn1-modules==0.2.8
 PyAutoGUI==0.9.48
 pycparser==2.19
 PyGetWindow==0.0.8
-Pygments==2.5.2
+Pygments==2.7.4
 pylint==2.4.4
 PyMsgBox==1.0.7
 PyMySQL==0.9.3
